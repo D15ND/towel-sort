@@ -4,7 +4,7 @@ module.exports = function towelSort(matrix) {
     if (typeof matrix[i] !== 'object') {
       newMatrix.push(matrix[i]);
     } else if (typeof matrix[i] === 'object') {
-      for (let k = 0; k < matrix[i]; k += 1) {
+      for (let k = 0; k < matrix[i].length; k += 1) {
         newMatrix.push(matrix[i][k]);
       }
     }
