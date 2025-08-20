@@ -4,10 +4,16 @@ module.exports = function towelSort(matrix) {
     if (typeof matrix[i] !== 'object') {
       newMatrix.push(matrix[i]);
     } else if (typeof matrix[i] === 'object') {
-      for (let k = 0; k < matrix[i].length; k += 1) {
-        newMatrix.push(matrix[i][k]);
+      if (i % 2 === 0) {
+        for (let k = 0; k < matrix[i].length; k += 1) {
+          newMatrix.push(matrix[i][k]);
+        }
+      } else if (i % 2 !== 0) {
+        for (let k = matrix[i].length - 1; k >= 0; k -= 1) {
+          newMatrix.push(matrix[i][k]);
+        }
       }
     }
   }
-  return newMatrix.sort((a, b) => a - b);
+  return newMatrix;
 };
