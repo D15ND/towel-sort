@@ -1,5 +1,8 @@
 module.exports = function towelSort(matrix) {
   const newMatrix = [];
+  if (matrix === undefined) {
+    return [];
+  }
   for (let i = 0; i < matrix.length; i += 1) {
     if (typeof matrix[i] !== 'object') {
       newMatrix.push(matrix[i]);
